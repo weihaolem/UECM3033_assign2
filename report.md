@@ -23,9 +23,9 @@ Explain how you implement your `task1.py` here.
 
 ## Task 2 -- SVD method and image compression
 
-picture file used. (image.jpg)
+picture file used. (image.JPG)
 
-![image.jpg](image.jpg)
+![image.JPG](image.JPG)
 
 How many non zero element in $\Sigma$?
 **1081 for each $\Sigma$ of r, g, b respectively**

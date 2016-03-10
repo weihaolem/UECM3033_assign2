@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
 #Load image file
-img=mpimg.imread('image.jpg')
+img=mpimg.imread('image.JPG')
 [r,g,b] = [img[:,:,i] for i in range(3)]
 
 #Show image
