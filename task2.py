@@ -41,14 +41,22 @@ sigma_b_30=np.zeros_like(sigma_b)
 sigma_b_30[:30] = sigma_b[:30]
 b_30 = np.matrix(U_b) * np.diag(sigma_b_30) * np.matrix(V_b[:num_data, :])
 
+#compress into color image
+low_img = img
+low_img[:,:,0] = r_30
+low_img[:,:,1] = g_30
+low_img[:,:,2] = b_30
+
 #Show red, green, blue image.
 fig = plt.figure(1)
-ax1 = fig.add_subplot(3,1,1)
-ax2 = fig.add_subplot(3,1,2)
-ax3 = fig.add_subplot(3,1,3)
+ax1 = fig.add_subplot(2,2,1)
+ax2 = fig.add_subplot(2,2,2)
+ax3 = fig.add_subplot(2,2,3)
+ax4 = fig.add_subplot(2,2,4)
 ax1.imshow(r_30, cmap = 'Reds')
 ax2.imshow(g_30, cmap = 'Greens')
 ax3.imshow(b_30, cmap = 'Blues')
+ax4.imshow(low_img)
 fig = plt.gcf()
 fig.set_size_inches(15,15)
 plt.suptitle('Lower Resolution, size=30')
@@ -70,14 +78,22 @@ sigma_b_200=np.zeros_like(sigma_b)
 sigma_b_200[:200] = sigma_b[:200]
 b_200 = np.matrix(U_b) * np.diag(sigma_b_200) * np.matrix(V_b[:num_data, :])
 
+#compress into color image
+hi_img = img
+hi_img[:,:,0] = r_200
+hi_img[:,:,1] = g_200
+hi_img[:,:,2] = b_200
+
 #Show red, green, blue image.
 fig = plt.figure(1)
-ax1 = fig.add_subplot(3,1,1)
-ax2 = fig.add_subplot(3,1,2)
-ax3 = fig.add_subplot(3,1,3)
+ax1 = fig.add_subplot(2,2,1)
+ax2 = fig.add_subplot(2,2,2)
+ax3 = fig.add_subplot(2,2,3)
+ax4 = fig.add_subplot(2,2,4)
 ax1.imshow(r_200, cmap = 'Reds')
 ax2.imshow(g_200, cmap = 'Greens')
 ax3.imshow(b_200, cmap = 'Blues')
+ax4.imshow(hi_img)
 fig = plt.gcf()
 fig.set_size_inches(15,15)
 plt.suptitle('Higher Resolution, size=200')
